@@ -52,6 +52,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
           hover: "hsl(var(--card-hover))",
         },
+        spotify: "hsl(var(--spotify))",
+        linkedin: "hsl(var(--linkedin))",
+        xtwitter: "hsl(var(--twitter))",
+        githubc: "hsl(var(--github))",
+        emailc: "hsl(var(--email))",
+        portfolioc: "hsl(var(--portfolio))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

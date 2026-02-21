@@ -7,26 +7,26 @@ interface BentoCardProps {
   icon: React.ReactNode;
   href: string;
   className?: string;
-  accent?: boolean;
+  brandColor?: string;
 }
 
-const BentoCard = ({ title, description, icon, href, className = "", accent }: BentoCardProps) => (
+const BentoCard = ({ title, description, icon, href, className = "", brandColor }: BentoCardProps) => (
   <motion.a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className={`group relative flex flex-col justify-between overflow-hidden rounded-lg border border-border bg-card p-6 transition-colors hover:bg-card-hover ${accent ? "border-primary/30" : ""} ${className}`}
+    className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md ${className}`}
     whileHover={{ y: -4 }}
     transition={{ type: "spring", stiffness: 400, damping: 25 }}
   >
     <div className="flex items-start justify-between">
-      <div className="text-muted-foreground group-hover:text-foreground transition-colors">
+      <div className={brandColor || "text-muted-foreground"}>
         {icon}
       </div>
       <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
     </div>
     <div className="mt-4">
-      <h3 className={`font-display text-lg font-semibold ${accent ? "text-primary" : "text-foreground"}`}>
+      <h3 className="font-display text-lg font-semibold text-foreground">
         {title}
       </h3>
       {description && (
@@ -57,7 +57,7 @@ const item = {
 
 const BentoGrid = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-16">
+    <div className="min-h-screen flex items-center justify-center px-4 py-16 bg-gradient-to-b from-background to-secondary/50">
       <div className="w-full max-w-2xl">
         {/* Header */}
         <motion.div
@@ -67,7 +67,7 @@ const BentoGrid = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-secondary flex items-center justify-center">
-            <span className="font-display text-2xl font-bold text-primary">Y</span>
+            <span className="font-display text-2xl font-bold text-foreground">Y</span>
           </div>
           <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">
             Your Name
@@ -91,7 +91,7 @@ const BentoGrid = () => {
               description="What I'm listening to"
               icon={<SpotifyIcon />}
               href="https://open.spotify.com"
-              accent
+              brandColor="text-spotify"
               className="h-full"
             />
           </motion.div>
@@ -102,6 +102,7 @@ const BentoGrid = () => {
               title="GitHub"
               icon={<Github className="h-7 w-7" />}
               href="https://github.com"
+              brandColor="text-githubc"
               className="h-full"
             />
           </motion.div>
@@ -112,6 +113,7 @@ const BentoGrid = () => {
               title="LinkedIn"
               icon={<Linkedin className="h-7 w-7" />}
               href="https://linkedin.com"
+              brandColor="text-linkedin"
               className="h-full"
             />
           </motion.div>
@@ -122,6 +124,7 @@ const BentoGrid = () => {
               title="X / Twitter"
               icon={<Twitter className="h-7 w-7" />}
               href="https://x.com"
+              brandColor="text-xtwitter"
               className="h-full"
             />
           </motion.div>
@@ -133,6 +136,7 @@ const BentoGrid = () => {
               description="hello@example.com"
               icon={<Mail className="h-7 w-7" />}
               href="mailto:hello@example.com"
+              brandColor="text-emailc"
               className="h-full"
             />
           </motion.div>
@@ -143,6 +147,7 @@ const BentoGrid = () => {
               title="Portfolio"
               icon={<ExternalLink className="h-7 w-7" />}
               href="https://example.com"
+              brandColor="text-portfolioc"
               className="h-full"
             />
           </motion.div>
