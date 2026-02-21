@@ -38,11 +38,17 @@
     --radius: 1rem;
 
     --spotify: 141 73% 42%;
+    --spotify-bg: 141 40% 94%;
     --linkedin: 210 80% 45%;
+    --linkedin-bg: 210 40% 93%;
     --twitter: 0 0% 10%;
+    --twitter-bg: 0 0% 94%;
     --github: 0 0% 15%;
+    --github-bg: 0 0% 94%;
     --email: 25 95% 55%;
+    --email-bg: 25 50% 94%;
     --portfolio: 270 60% 55%;
+    --portfolio-bg: 270 40% 94%;
 
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-body: 'Inter', system-ui, sans-serif;
