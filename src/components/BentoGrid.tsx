@@ -1,41 +1,67 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, ExternalLink } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface BentoCardProps {
   title: string;
   description?: string;
   icon: React.ReactNode;
-  href: string;
+  href?: string;
+  to?: string;
   className?: string;
   iconColor?: string;
   bgColor?: string;
 }
 
-const BentoCard = ({ title, description, icon, href, className = "", iconColor, bgColor }: BentoCardProps) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border p-6 shadow-sm transition-all hover:shadow-md ${bgColor || "bg-card"} ${className}`}
-    whileHover={{ y: -4 }}
-    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-  >
-    <div className="flex items-start justify-between">
-      <div className={iconColor || "text-muted-foreground"}>
-        {icon}
+const BentoCard = ({ title, description, icon, href, to, className = "", iconColor, bgColor }: BentoCardProps) => {
+  const content = (
+    <>
+      <div className="flex items-start justify-between">
+        <div className={iconColor || "text-muted-foreground"}>
+          {icon}
+        </div>
+        <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
-      <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-    </div>
-    <div className="mt-4">
-      <h3 className={`font-display text-lg font-semibold ${iconColor || "text-foreground"}`}>
-        {title}
-      </h3>
-      {description && (
-        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
-      )}
-    </div>
-  </motion.a>
-);
+      <div className="mt-4">
+        <h3 className={`font-display text-lg font-semibold ${iconColor || "text-foreground"}`}>
+          {title}
+        </h3>
+        {description && (
+          <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+        )}
+      </div>
+    </>
+  );
+
+  const sharedClass = `group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border p-6 shadow-sm transition-all hover:shadow-md ${bgColor || "bg-card"} ${className}`;
+
+  if (to) {
+    return (
+      <Link to={to}>
+        <motion.div
+          className={sharedClass}
+          whileHover={{ y: -4 }}
+          transition={{ type: "spring", stiffness: 400, damping: 25 }}
+        >
+          {content}
+        </motion.div>
+      </Link>
+    );
+  }
+
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={sharedClass}
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+    >
+      {content}
+    </motion.a>
+  );
+};
 
 const SpotifyIcon = () => (
   <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" xmlns="http://www.w3.org/2000/svg">
@@ -155,6 +181,19 @@ const BentoGrid = () => {
               href="https://example.com"
               iconColor="text-portfolioc"
               bgColor="bg-portfolioc-bg"
+              className="h-full"
+            />
+          </motion.div>
+
+          {/* Books */}
+          <motion.div variants={item} className="col-span-2 sm:col-span-3">
+            <BentoCard
+              title="Bookshelf"
+              description="My favourite reads"
+              icon={<BookOpen className="h-7 w-7" />}
+              to="/books"
+              iconColor="text-foreground"
+              bgColor="bg-secondary"
               className="h-full"
             />
           </motion.div>
