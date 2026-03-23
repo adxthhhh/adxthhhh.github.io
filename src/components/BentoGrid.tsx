@@ -94,13 +94,13 @@ const BentoGrid = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-secondary flex items-center justify-center">
-            <span className="font-display text-2xl font-bold text-foreground">Y</span>
+            <span className="font-display text-2xl font-bold text-foreground">A</span>
           </div>
           <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">
-            Your Name
+            ADITH A J
           </h1>
           <p className="mt-2 text-muted-foreground text-sm">
-            Developer · Creator · Music lover
+            a kite dancing in a hurricane
           </p>
         </motion.div>
 
