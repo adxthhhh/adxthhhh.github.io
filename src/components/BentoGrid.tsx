@@ -161,19 +161,6 @@ const BentoGrid = () => {
             />
           </motion.div>
 
-          {/* Email - wide */}
-          <motion.div variants={item} className="col-span-2 sm:col-span-2">
-            <BentoCard
-              title="Get in touch"
-              description="adithaj2006@gmail.com"
-              icon={<Mail className="h-7 w-7" />}
-              href="mailto:adithaj2006@gmail.com"
-              iconColor="text-emailc"
-              bgColor="bg-emailc-bg"
-              className="h-full"
-            />
-          </motion.div>
-
           {/* Portfolio */}
           <motion.div variants={item} className="col-span-1">
             <BentoCard
@@ -182,6 +169,19 @@ const BentoGrid = () => {
               to="/portfolio"
               iconColor="text-portfolioc"
               bgColor="bg-portfolioc-bg"
+              className="h-full"
+            />
+          </motion.div>
+
+          {/* Email - wide */}
+          <motion.div variants={item} className="col-span-2">
+            <BentoCard
+              title="Get in touch"
+              description="adithaj2006@gmail.com"
+              icon={<Mail className="h-7 w-7" />}
+              href="mailto:adithaj2006@gmail.com"
+              iconColor="text-emailc"
+              bgColor="bg-emailc-bg"
               className="h-full"
             />
           </motion.div>
