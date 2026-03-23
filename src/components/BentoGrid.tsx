@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import profileImg from "@/assets/profile.jpg";
 
 interface BentoCardProps {
   title: string;
@@ -93,8 +94,8 @@ const BentoGrid = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-secondary flex items-center justify-center">
-            <span className="font-display text-2xl font-bold text-foreground">A</span>
+          <div className="mx-auto mb-4 h-20 w-20 rounded-full overflow-hidden bg-secondary">
+            <img src={profileImg} alt="Adith A J" className="h-full w-full object-cover" />
           </div>
           <h1 className="font-display text-3xl font-bold tracking-tight text-foreground">
             ADITH A J
