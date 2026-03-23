@@ -141,7 +141,7 @@ const BentoGrid = () => {
             <BentoCard
               title="LinkedIn"
               icon={<Linkedin className="h-7 w-7" />}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/adith-a-j-b623a0372/"
               iconColor="text-linkedin"
               bgColor="bg-linkedin-bg"
               className="h-full"
