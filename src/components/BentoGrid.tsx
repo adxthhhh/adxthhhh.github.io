@@ -153,7 +153,7 @@ const BentoGrid = () => {
             <BentoCard
               title="X / Twitter"
               icon={<Twitter className="h-7 w-7" />}
-              href="https://x.com"
+              href="https://x.com/adxthhhh"
               iconColor="text-xtwitter"
               bgColor="bg-xtwitter-bg"
               className="h-full"
