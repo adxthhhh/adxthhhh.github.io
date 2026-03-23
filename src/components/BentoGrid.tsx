@@ -117,7 +117,7 @@ const BentoGrid = () => {
               title="Spotify"
               description="What I'm listening to"
               icon={<SpotifyIcon />}
-              href="https://open.spotify.com"
+              href="https://open.spotify.com/user/31sh7m5titrta4j3nzfdyumdmrs4?si=c0d0d013d2f841b4"
               iconColor="text-spotify"
               bgColor="bg-spotify-bg"
               className="h-full"
