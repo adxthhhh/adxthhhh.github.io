@@ -129,7 +129,7 @@ const BentoGrid = () => {
             <BentoCard
               title="GitHub"
               icon={<Github className="h-7 w-7" />}
-              href="https://github.com"
+              href="https://github.com/adxthhhh"
               iconColor="text-githubc"
               bgColor="bg-githubc-bg"
               className="h-full"
