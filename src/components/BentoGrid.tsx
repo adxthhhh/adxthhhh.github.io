@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import profileImg from "@/assets/profile.jpg";
 
 interface BentoCardProps {
   title: string;
