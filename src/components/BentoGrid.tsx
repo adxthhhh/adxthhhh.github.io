@@ -178,7 +178,7 @@ const BentoGrid = () => {
             <BentoCard
               title="Portfolio"
               icon={<ExternalLink className="h-7 w-7" />}
-              href="https://example.com"
+              to="/portfolio"
               iconColor="text-portfolioc"
               bgColor="bg-portfolioc-bg"
               className="h-full"

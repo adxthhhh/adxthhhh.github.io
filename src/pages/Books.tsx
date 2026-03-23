@@ -12,66 +12,34 @@ interface Book {
 
 const books: Book[] = [
   {
-    title: "Atomic Habits",
-    author: "James Clear",
-    color: "hsl(45 80% 60%)",
-    textColor: "hsl(45 30% 15%)",
-    href: "https://jamesclear.com/atomic-habits",
-  },
-  {
-    title: "Deep Work",
-    author: "Cal Newport",
-    color: "hsl(210 50% 35%)",
-    textColor: "hsl(210 20% 90%)",
-    href: "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/",
-  },
-  {
-    title: "The Pragmatic Programmer",
-    author: "David Thomas & Andrew Hunt",
-    color: "hsl(0 0% 25%)",
-    textColor: "hsl(45 90% 65%)",
-  },
-  {
-    title: "Sapiens",
-    author: "Yuval Noah Harari",
-    color: "hsl(25 60% 45%)",
-    textColor: "hsl(25 20% 95%)",
-  },
-  {
-    title: "Zero to One",
-    author: "Peter Thiel",
-    color: "hsl(210 80% 50%)",
-    textColor: "hsl(0 0% 98%)",
-  },
-  {
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman",
-    color: "hsl(0 60% 42%)",
-    textColor: "hsl(0 20% 95%)",
-  },
-  {
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    color: "hsl(150 30% 40%)",
-    textColor: "hsl(150 10% 95%)",
-  },
-  {
-    title: "Shoe Dog",
-    author: "Phil Knight",
+    title: "The Creative Act",
+    author: "Rick Rubin",
     color: "hsl(0 0% 92%)",
     textColor: "hsl(0 0% 15%)",
   },
   {
-    title: "Creativity, Inc.",
-    author: "Ed Catmull",
-    color: "hsl(270 40% 45%)",
-    textColor: "hsl(270 20% 92%)",
+    title: "A Thousand Splendid Suns",
+    author: "Khaled Hosseini",
+    color: "hsl(25 60% 45%)",
+    textColor: "hsl(25 20% 95%)",
   },
   {
-    title: "The Almanack of Naval Ravikant",
-    author: "Eric Jorgenson",
-    color: "hsl(45 50% 85%)",
-    textColor: "hsl(45 30% 20%)",
+    title: "Fooled by Randomness",
+    author: "Nassim Nicholas Taleb",
+    color: "hsl(210 50% 35%)",
+    textColor: "hsl(210 20% 90%)",
+  },
+  {
+    title: "Think and Grow Rich",
+    author: "Napoleon Hill",
+    color: "hsl(45 80% 60%)",
+    textColor: "hsl(45 30% 15%)",
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    color: "hsl(0 60% 42%)",
+    textColor: "hsl(0 20% 95%)",
   },
 ];
 
