@@ -117,7 +117,7 @@ const BentoGrid = () => {
               title="Spotify"
               description="What I'm listening to"
               icon={<SpotifyIcon />}
-              href="https://open.spotify.com"
+              href="https://open.spotify.com/user/31sh7m5titrta4j3nzfdyumdmrs4?si=c0d0d013d2f841b4"
               iconColor="text-spotify"
               bgColor="bg-spotify-bg"
               className="h-full"
@@ -129,7 +129,7 @@ const BentoGrid = () => {
             <BentoCard
               title="GitHub"
               icon={<Github className="h-7 w-7" />}
-              href="https://github.com"
+              href="https://github.com/adxthhhh"
               iconColor="text-githubc"
               bgColor="bg-githubc-bg"
               className="h-full"
@@ -141,7 +141,7 @@ const BentoGrid = () => {
             <BentoCard
               title="LinkedIn"
               icon={<Linkedin className="h-7 w-7" />}
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/adith-a-j-b623a0372/"
               iconColor="text-linkedin"
               bgColor="bg-linkedin-bg"
               className="h-full"
@@ -153,7 +153,7 @@ const BentoGrid = () => {
             <BentoCard
               title="X / Twitter"
               icon={<Twitter className="h-7 w-7" />}
-              href="https://x.com"
+              href="https://x.com/adxthhhh"
               iconColor="text-xtwitter"
               bgColor="bg-xtwitter-bg"
               className="h-full"
@@ -164,9 +164,9 @@ const BentoGrid = () => {
           <motion.div variants={item} className="col-span-2 sm:col-span-2">
             <BentoCard
               title="Get in touch"
-              description="hello@example.com"
+              description="adithaj2006@gmail.com"
               icon={<Mail className="h-7 w-7" />}
-              href="mailto:hello@example.com"
+              href="mailto:adithaj2006@gmail.com"
               iconColor="text-emailc"
               bgColor="bg-emailc-bg"
               className="h-full"
@@ -178,7 +178,7 @@ const BentoGrid = () => {
             <BentoCard
               title="Portfolio"
               icon={<ExternalLink className="h-7 w-7" />}
-              href="https://example.com"
+              to="/portfolio"
               iconColor="text-portfolioc"
               bgColor="bg-portfolioc-bg"
               className="h-full"
