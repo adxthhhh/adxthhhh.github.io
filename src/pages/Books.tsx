@@ -52,22 +52,22 @@ const otherBooks = {
   "2023": [
     "Rich Dad Poor Dad",
     "The Psychology Of Money",
-    "Think and Grow Rich (Irfan from Brilliant)",
+    "Think and Grow Rich",
     "The 48 Laws Of Power",
-    "Atomic Habits (Irfan from Brilliant)",
+    "Atomic Habits",
     "Ikigai",
     "The Subtle Art Of Not Giving A Fuck",
     "The Diary Of A CEO",
   ],
   "2024": [
-    "White Nights (My opinion)",
+    "White Nights",
     "The Kite Runner",
     "And The Mountains Echoed",
   ],
   "2025": [
     "Greenlights",
     "If you could see the sun",
-    "Shoe Dog (Lend to Aysha Shafeeque)",
+    "Shoe Dog",
     "Fooled by Randomness",
     "Mr Salary",
     "1984",
@@ -89,7 +89,7 @@ const item = {
 
 const Books = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  
+
   return (
     <div className="min-h-screen bg-foreground">
       {/* Header */}
@@ -140,7 +140,7 @@ const Books = () => {
         </motion.div>
       </main>
 
-    <motion.p
+      <motion.p
         className="pb-10 text-center text-xs text-muted"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -182,41 +182,41 @@ const Books = () => {
         animate={{ x: isDrawerOpen ? 0 : "100%" }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
       >
-        <button 
-          onClick={() => setIsDrawerOpen(false)} 
+        <button
+          onClick={() => setIsDrawerOpen(false)}
           className="mb-8 flex items-center text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
         >
           <X className="mr-2 h-4 w-4" /> Close
         </button>
-        
+
         <h2 className="mb-6 font-display text-xl font-bold text-foreground">Other Books I've Read</h2>
-        
+
         <div className="space-y-8">
           {/* Uncategorized */}
           <div className="space-y-3">
             {otherBooks.uncategorized.map(book => (
-              <a 
-                key={book} 
-                href={`https://www.google.com/search?q=book+${encodeURIComponent(book)}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                key={book}
+                href={`https://www.google.com/search?q=book+${encodeURIComponent(book)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-sm text-muted-foreground hover:text-primary hover:underline transition-colors leading-relaxed"
               >
                 • {book}
               </a>
             ))}
           </div>
-          
+
           {/* Yearly Categories */}
           {["2023", "2024", "2025"].map(year => (
             <div key={year} className="space-y-3">
               <h3 className="font-semibold text-lg border-b border-border pb-1 mb-3 text-foreground">{year}</h3>
               {otherBooks[year as keyof typeof otherBooks].map(book => (
-                <a 
-                  key={book} 
-                  href={`https://www.google.com/search?q=book+${encodeURIComponent(book)}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  key={book}
+                  href={`https://www.google.com/search?q=book+${encodeURIComponent(book)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block text-sm text-muted-foreground hover:text-primary hover:underline transition-colors leading-relaxed"
                 >
                   • {book}
