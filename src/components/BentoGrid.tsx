@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen, Film } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, Instagram, ExternalLink, BookOpen, Film } from "lucide-react";
 import { Link } from "react-router-dom";
 import profileImg from "@/assets/profile.jpg";
 
@@ -64,8 +64,8 @@ const BentoCard = ({ title, description, icon, href, to, className = "", iconCol
   );
 };
 
-const SpotifyIcon = () => (
-  <svg viewBox="0 0 24 24" className="h-7 w-7 fill-current" xmlns="http://www.w3.org/2000/svg">
+const SpotifyIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className || "h-7 w-7 fill-current"} xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
   </svg>
 );
@@ -89,7 +89,7 @@ const BentoGrid = () => {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <motion.div
-          className="mb-10 text-center"
+          className="mb-14 text-center"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -103,6 +103,25 @@ const BentoGrid = () => {
           <p className="mt-2 text-muted-foreground text-sm">
             a kite dancing in a hurricane
           </p>
+          
+          {/* Social Icons Inline */}
+          <div className="mt-8 flex items-center justify-center gap-5">
+            <a href="https://github.com/adxthhhh" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-githubc text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="GitHub">
+              <Github className="h-[22px] w-[22px]" strokeWidth={2.5} />
+            </a>
+            <a href="https://www.linkedin.com/in/adith-a-j-b623a0372/" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-linkedin text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="LinkedIn">
+              <Linkedin className="h-[22px] w-[22px] fill-current" />
+            </a>
+            <a href="https://x.com/adxthhhh" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-xtwitter text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Twitter">
+              <Twitter className="h-[22px] w-[22px] fill-current" />
+            </a>
+            <a href="https://www.instagram.com/adxthhhh/" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Instagram">
+              <Instagram className="h-[22px] w-[22px]" strokeWidth={2.25} />
+            </a>
+            <a href="https://open.spotify.com/user/31sh7m5titrta4j3nzfdyumdmrs4?si=c0d0d013d2f841b4" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-spotify text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Spotify">
+              <SpotifyIcon className="h-[22px] w-[22px] fill-current" />
+            </a>
+          </div>
         </motion.div>
 
         {/* Bento Grid */}
@@ -112,57 +131,9 @@ const BentoGrid = () => {
           initial="hidden"
           animate="show"
         >
-          {/* Spotify - large */}
-          <motion.div variants={item} className="col-span-2 row-span-1">
-            <BentoCard
-              title="Spotify"
-              description="What I'm listening to"
-              icon={<SpotifyIcon />}
-              href="https://open.spotify.com/user/31sh7m5titrta4j3nzfdyumdmrs4?si=c0d0d013d2f841b4"
-              iconColor="text-spotify"
-              bgColor="bg-spotify-bg"
-              className="h-full"
-            />
-          </motion.div>
-
-          {/* GitHub */}
-          <motion.div variants={item} className="col-span-1">
-            <BentoCard
-              title="GitHub"
-              icon={<Github className="h-7 w-7" />}
-              href="https://github.com/adxthhhh"
-              iconColor="text-githubc"
-              bgColor="bg-githubc-bg"
-              className="h-full"
-            />
-          </motion.div>
-
-          {/* LinkedIn */}
-          <motion.div variants={item} className="col-span-1">
-            <BentoCard
-              title="LinkedIn"
-              icon={<Linkedin className="h-7 w-7" />}
-              href="https://www.linkedin.com/in/adith-a-j-b623a0372/"
-              iconColor="text-linkedin"
-              bgColor="bg-linkedin-bg"
-              className="h-full"
-            />
-          </motion.div>
-
-          {/* Twitter / X */}
-          <motion.div variants={item} className="col-span-1">
-            <BentoCard
-              title="X / Twitter"
-              icon={<Twitter className="h-7 w-7" />}
-              href="https://x.com/adxthhhh"
-              iconColor="text-xtwitter"
-              bgColor="bg-xtwitter-bg"
-              className="h-full"
-            />
-          </motion.div>
 
           {/* Portfolio */}
-          <motion.div variants={item} className="col-span-1">
+          <motion.div variants={item} className="col-span-2 sm:col-span-2">
             <BentoCard
               title="Portfolio"
               icon={<ExternalLink className="h-7 w-7" />}
@@ -174,7 +145,7 @@ const BentoGrid = () => {
           </motion.div>
 
           {/* Email - wide */}
-          <motion.div variants={item} className="col-span-2">
+          <motion.div variants={item} className="col-span-2 sm:col-span-2">
             <BentoCard
               title="Get in touch"
               description="adithaj2006@gmail.com"

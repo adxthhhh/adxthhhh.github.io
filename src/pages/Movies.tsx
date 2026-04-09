@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { ArrowLeft, Film } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, Film, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -98,7 +98,7 @@ const MovieCard = ({ title }: { title: string }) => {
       variants={itemVariants}
       whileHover={{ scale: 1.15, y: -10, zIndex: 50 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="relative flex aspect-[2/3] w-full flex-col overflow-hidden rounded-xl bg-secondary hover:shadow-2xl shadow-md border border-border"
+      className="relative flex aspect-[2/3] w-full flex-col overflow-hidden rounded-2xl bg-secondary hover:shadow-2xl shadow-md transform-gpu"
     >
       {isLoading ? (
         <div className="flex h-full w-full items-center justify-center animate-pulse bg-muted">
@@ -137,31 +137,39 @@ const MovieCard = ({ title }: { title: string }) => {
 };
 
 const Movies = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-foreground pb-20">
-      {/* Header */}
-      <motion.header
-        className="sticky top-0 z-10 border-b border-muted-foreground/20 bg-foreground/95 backdrop-blur-sm shadow-sm"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        <div className="mx-auto flex max-w-[1200px] items-center gap-4 px-6 py-5">
+      {/* Back Navigation */}
+      <div className="mx-auto max-w-[1200px] px-6 pt-8">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           <Link
             to="/"
-            className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-background"
+            className="inline-flex items-center gap-2 rounded-full bg-secondary/80 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur-md transition-all hover:scale-105 hover:bg-secondary hover:shadow-md border border-border"
           >
             <ArrowLeft className="h-4 w-4" />
             Back
           </Link>
-          <div className="ml-auto">
-            <h1 className="font-display text-lg font-semibold text-background">
-              Watchlist
-            </h1>
-            <p className="text-xs text-muted text-right">Movies & Shows</p>
-          </div>
-        </div>
-      </motion.header>
+        </motion.div>
+      </div>
 
       {/* Movies Grid */}
       <main className="mx-auto max-w-[1200px] px-6 py-12">
@@ -199,6 +207,23 @@ const Movies = () => {
       >
         © {new Date().getFullYear()} • Data from OMDB API
       </motion.p>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            onClick={scrollToTop}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-20 right-6 z-50 rounded-full border border-border bg-secondary/80 p-3 text-foreground backdrop-blur-md shadow-lg transition-all hover:scale-110 hover:bg-secondary hover:shadow-xl dark:border-muted"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp className="h-[1.2rem] w-[1.2rem] opacity-70" />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
