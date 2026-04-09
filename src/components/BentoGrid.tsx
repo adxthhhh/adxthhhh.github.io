@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter, ExternalLink, BookOpen, Film } from "lucide-react";
 import { Link } from "react-router-dom";
 import profileImg from "@/assets/profile.jpg";
 
@@ -187,12 +187,25 @@ const BentoGrid = () => {
           </motion.div>
 
           {/* Books */}
-          <motion.div variants={item} className="col-span-2 sm:col-span-3">
+          <motion.div variants={item} className="col-span-1 sm:col-span-2">
             <BentoCard
               title="Bookshelf"
               description="My favourite reads"
               icon={<BookOpen className="h-7 w-7" />}
               to="/books"
+              iconColor="text-foreground"
+              bgColor="bg-secondary"
+              className="h-full"
+            />
+          </motion.div>
+
+          {/* Movies */}
+          <motion.div variants={item} className="col-span-1 sm:col-span-2">
+            <BentoCard
+              title="Watchlist"
+              description="Movies & Shows"
+              icon={<Film className="h-7 w-7" />}
+              to="/movies"
               iconColor="text-foreground"
               bgColor="bg-secondary"
               className="h-full"

@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { ThemeToggle } from "./components/ThemeToggle";
 import Index from "./pages/Index";
 import Books from "./pages/Books";
+import Movies from "./pages/Movies";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/movies" element={<Movies />} />
             <Route path="/portfolio" element={<Portfolio />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
