@@ -162,19 +162,4 @@ const ArticleCard = ({ article }: { article: Article }) => (
     </p>
   </motion.div>
 );
-
-      {/* Footer */}
-      <motion.footer
-        className="pb-10 pt-16 text-center text-xs text-muted-foreground"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <div className="mx-auto mb-4 h-[1px] w-16 bg-border/50"></div>
-        <p>© {new Date().getFullYear()} Adith A J. All rights reserved.</p>
-      </motion.footer>
-    </div>
-  );
-};
-
 export default Articles;
