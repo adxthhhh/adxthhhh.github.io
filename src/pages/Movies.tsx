@@ -153,39 +153,29 @@ const Movies = () => {
   };
 
   return (
-    <div className="min-h-screen bg-foreground pb-20">
-      {/* Back Navigation */}
-      <div className="mx-auto max-w-[1200px] px-6 pt-8">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.4 }}
+    <div className="min-h-screen bg-background pb-20">
+      {/* Back Button and Title */}
+      <div className="mx-auto max-w-[1200px] px-6 pt-12">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground mb-10"
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 rounded-full bg-secondary/80 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur-md transition-all hover:scale-105 hover:bg-secondary hover:shadow-md border border-border"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back
-          </Link>
-        </motion.div>
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </Link>
+        
+        <div className="flex flex-col mb-12">
+          <h1 className="font-display text-4xl font-bold text-foreground">
+            Cinematic Log
+          </h1>
+          <p className="mt-2 text-muted-foreground leading-relaxed max-w-2xl">
+            A matrix of all the films and shows I've watched. Posters are sourced from IMDB. Select any card to discover more on Letterboxd.
+          </p>
+        </div>
       </div>
 
       {/* Movies Grid */}
-      <main className="mx-auto max-w-[1200px] px-6 py-12">
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-12"
-        >
-          <h2 className="text-3xl font-display font-bold text-background tracking-tight mb-3">
-            Cinematic Log
-          </h2>
-          <p className="text-muted leading-relaxed max-w-2xl">
-            A matrix of all the films and shows I've watched. Posters are sourced from IMDB. Select any card to discover more on Letterboxd.
-          </p>
-        </motion.div>
+      <main className="mx-auto max-w-[1200px] px-6">
 
         <motion.div
           className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"

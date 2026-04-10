@@ -91,30 +91,26 @@ const Books = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-foreground">
-      {/* Header */}
-      <motion.header
-        className="sticky top-0 z-10 border-b border-muted-foreground/20 bg-foreground/95 backdrop-blur-sm"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-      >
-        <div className="mx-auto flex max-w-3xl items-center gap-4 px-6 py-5">
-          <Link
-            to="/"
-            className="flex items-center gap-2 text-sm text-muted transition-colors hover:text-background"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back
-          </Link>
-          <div className="ml-auto">
-            <h1 className="font-display text-lg font-semibold text-background">
+    <div className="min-h-screen bg-background">
+      {/* Back Button and Title */}
+      <div className="mx-auto max-w-3xl px-6 pt-12">
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground mb-10"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back
+        </Link>
+        
+        <div className="flex items-end justify-between mb-12">
+          <div>
+            <h1 className="font-display text-4xl font-bold text-foreground">
               Bookshelf
             </h1>
-            <p className="text-xs text-muted">Favourite reads</p>
+            <p className="mt-2 text-muted-foreground">Favourite reads</p>
           </div>
         </div>
-      </motion.header>
+      </div>
 
       {/* Book Stack */}
       <main className="mx-auto max-w-3xl px-6 py-16">
@@ -141,7 +137,7 @@ const Books = () => {
       </main>
 
       <motion.p
-        className="pb-10 text-center text-xs text-muted"
+        className="pb-10 text-center text-xs text-muted-foreground"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
