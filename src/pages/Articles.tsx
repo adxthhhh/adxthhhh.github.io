@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { pgEssays } from "@/data/pg_essays";
+
 
 interface Article {
   title: string;
@@ -121,6 +123,25 @@ const Articles = () => {
               ))}
             </motion.div>
           </section>
+
+          {/* Section: Paul Graham Essays */}
+          <section>
+            <h2 className="font-display text-sm font-bold uppercase tracking-widest text-muted-foreground/60 mb-8 border-b border-border/50 pb-2">
+              Paul Graham Essays to Read
+            </h2>
+            <motion.div
+              className="flex flex-col gap-8"
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
+              {pgEssays.map((article, index) => (
+                <ArticleCard key={index} article={article} />
+              ))}
+            </motion.div>
+          </section>
+
         </div>
       </main>
 
