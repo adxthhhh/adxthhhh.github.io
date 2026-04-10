@@ -12,31 +12,31 @@ const movies = [
   // Jake Gyllenhaal
   "Nocturnal Animals", "Nightcrawler", "Southpaw", "Enemy", "Prisoners", "Donnie Darko", "Demolition", "Zodiac", "Love & Other Drugs",
   // Hollywood Dramas / Action / Sci-Fi / Misc
-  "Dead Poets Society", "The Social Network", "The Breakfast Club", "8 Mile", "The Truman Show", 
-  "Marley & Me", "The Founder", "Lady Macbeth", "Collateral", "Warrior", "The Edge of Seventeen", 
-  "Goodfellas", "Taxi Driver", "Arrival", "Dune", "Dune: Part Two", 
-  "The Usual Suspects", "Avatar", "Avatar: The Way of Water", 
-  "The Big Short", "Whiplash", "Good Will Hunting", "Requiem For A Dream", 
-  "The Station Agent", "Dumb Money", "Boiler Room", 
-  "Tetris", "Sound of Metal", "True Detective", "The Talented Mr. Ripley", 
-  "Raging Bull", "The Terminal", "The Reluctant Fundamentalist", "The Fighter", 
-  "The Godfather", "Sinners", "Star Wars: Episode III - Revenge of the Sith", 
-  "Casino Royale", "Skyfall", "Quantum of Solace", "Spectre", "No Time to Die", 
-  "The Machinist", "The Prestige", "American Psycho", "Ford v Ferrari", "Tenet", 
-  "Oppenheimer", "Memento", "Inception", "Interstellar", "The Dark Knight", 
-  "Dunkirk", "Ocean's Eleven", "Fight Club", "Mr. & Mrs. Smith", "Se7en", "F1", 
+  "Dead Poets Society", "The Social Network", "The Breakfast Club", "8 Mile", "The Truman Show",
+  "Marley & Me", "The Founder", "Lady Macbeth", "Collateral", "Warrior", "The Edge of Seventeen",
+  "Goodfellas", "Taxi Driver", "Arrival", "Dune", "Dune: Part Two",
+  "The Usual Suspects", "Avatar", "Avatar: The Way of Water",
+  "The Big Short", "Whiplash", "Good Will Hunting", "Requiem For A Dream",
+  "The Station Agent", "Dumb Money", "Boiler Room",
+  "Tetris", "Sound of Metal", "True Detective", "The Talented Mr. Ripley",
+  "Raging Bull", "The Terminal", "The Reluctant Fundamentalist", "The Fighter",
+  "The Godfather", "Sinners", "Star Wars: Episode III - Revenge of the Sith",
+  "Casino Royale", "Skyfall", "Quantum of Solace", "Spectre", "No Time to Die",
+  "The Machinist", "The Prestige", "American Psycho", "Ford v Ferrari", "Tenet",
+  "Oppenheimer", "Memento", "Inception", "Interstellar", "The Dark Knight",
+  "Dunkirk", "Ocean's Eleven", "Fight Club", "Mr. & Mrs. Smith", "Se7en", "F1",
   "Catch Me If You Can", "Shutter Island", "Drive", "Blade Runner 2049", "The Lincoln Lawyer",
   // Romance / Rom-Coms
   "Before Sunrise", "Me Before You", "Notting Hill", "The Rewrite",
-  "The Theory of Everything", "The Fault in Our Stars", "Five Feet Apart", 
-  "Atonement", "13 Going on 30", "How I Met Your Mother", "The Vow", 
-  "Eternal Sunshine of the Spotless Mind", "Begin Again", "50 First Dates", 
+  "The Theory of Everything", "The Fault in Our Stars", "Five Feet Apart",
+  "Atonement", "13 Going on 30", "How I Met Your Mother", "The Vow",
+  "Eternal Sunshine of the Spotless Mind", "Begin Again", "50 First Dates",
   "Her", "Pretty Woman", "The Notebook", "Failure to Launch", "How to Lose a Guy in 10 Days",
   // Action/Horror/Comedy (Moved based on priority)
-  "Don't Breathe", "Gran Turismo", "Tracers", "Ready or Not", "Bullet Train", 
+  "Don't Breathe", "Gran Turismo", "Tracers", "Ready or Not", "Bullet Train",
   "You Don't Mess with the Zohan", "Riverdale", "Wrong Turn", "Wrong Turn 2", "Wrong Turn 3", "The Karate Kid",
   // Indian Cinema / Non-Hollywood
-  "Kireedam", "Vikram", "Kaithi", "Vaaranam Aayiram", "Alaipayuthey", "Kabhi Khushi Kabhie Gham", 
+  "Kireedam", "Vikram", "Kaithi", "Vaaranam Aayiram", "Alaipayuthey", "Kabhi Khushi Kabhie Gham",
   "Zindagi Na Milegi Dobara", "Gully Boy", "Farzi", "No Smoking", "Karthik Calling Karthik", "The Ship of Theseus"
 ];
 
@@ -53,19 +53,27 @@ const itemVariants = {
   show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 300, damping: 24 } },
 };
 
+const customPosters: Record<string, string> = {
+  "Vaaranam Aayiram": "https://a.ltrbxd.com/resized/film-poster/2/5/9/6/8/25968-vaaranam-aayiram-0-1000-0-1500-crop.jpg?v=7c8c0efee6",
+  "Kireedam": "https://a.ltrbxd.com/resized/film-poster/1/3/7/5/9/9/137599-kireedam-0-1000-0-1500-crop.jpg?v=a7cb62eabd",
+  "Alaipayuthey": "https://a.ltrbxd.com/resized/film-poster/1/6/5/4/1/16541-alaipayuthey-0-1000-0-1500-crop.jpg?v=10ecc6c91a",
+  "The Ship of Theseus": "https://imgs.search.brave.com/5Y7HmVxvO1j0T41yyEBrCvvrLOivC_0nKYpQt3VLLz4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vdGh1bWIv/OS85OC9TaGlwX29m/X1RoZXNldXNfZG9t/ZXN0aWNfcmVsZWFz/ZV9wb3N0ZXIuanBn/LzUxMnB4LVNoaXBf/b2ZfVGhlc2V1c19k/b21lc3RpY19yZWxl/YXNlX3Bvc3Rlci5q/cGc"
+};
+
 // Component to fetch and display a single movie poster
 const MovieCard = ({ title }: { title: string }) => {
-  const [posterUrl, setPosterUrl] = useState<string | null>(null);
+  const [posterUrl, setPosterUrl] = useState<string | null>(customPosters[title] || null);
   const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!customPosters[title]);
 
   useEffect(() => {
-    // We use OMDB free api to get the poster by title.
-    // In a real application, consider using a backend or a private key!
+    // If we already have a custom poster, don't fetch from OMDB
+    if (customPosters[title]) return;
+
     const fetchMovieData = async () => {
       try {
         let apiUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=8b0b451`;
-        
+
         // Handling strict matches using IMDB IDs for tricky titles
         if (title.includes("Once Upon a Time")) {
           apiUrl = `https://www.omdbapi.com/?i=tt7131622&apikey=8b0b451`;
@@ -84,7 +92,7 @@ const MovieCard = ({ title }: { title: string }) => {
         setIsLoading(false);
       }
     };
-    
+
     fetchMovieData();
   }, [title]);
 
@@ -110,14 +118,14 @@ const MovieCard = ({ title }: { title: string }) => {
           <h3 className="font-display font-bold text-foreground text-sm uppercase tracking-tight">{title}</h3>
         </div>
       ) : (
-        <img 
-          src={posterUrl} 
-          alt={title} 
+        <img
+          src={posterUrl}
+          alt={title}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
       )}
-      
+
       {/* Overlay with title that appears on hover */}
       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="p-4">
@@ -125,7 +133,7 @@ const MovieCard = ({ title }: { title: string }) => {
             {title}
           </p>
           <p className="text-white/70 text-xs mt-1 flex items-center">
-            View on Letterboxd 
+            View on Letterboxd
             <span className="ml-1 inline-block opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0">
               →
             </span>
@@ -155,7 +163,7 @@ const Movies = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Back Button and Title */}
-      <div className="mx-auto max-w-[1200px] px-6 pt-12">
+      <div className="mx-auto max-w-3xl px-6 pt-12">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground mb-10"
@@ -163,7 +171,7 @@ const Movies = () => {
           <ArrowLeft className="h-4 w-4" />
           Back
         </Link>
-        
+
         <div className="flex flex-col mb-12">
           <h1 className="font-display text-4xl font-bold text-foreground">
             Cinematic Log
@@ -175,10 +183,10 @@ const Movies = () => {
       </div>
 
       {/* Movies Grid */}
-      <main className="mx-auto max-w-[1200px] px-6">
+      <main className="mx-auto max-w-3xl px-6">
 
         <motion.div
-          className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+          className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4"
           variants={container}
           initial="hidden"
           animate="show"
@@ -188,7 +196,7 @@ const Movies = () => {
           ))}
         </motion.div>
       </main>
-      
+
       <motion.p
         className="pt-10 text-center text-xs text-muted/70"
         initial={{ opacity: 0 }}
