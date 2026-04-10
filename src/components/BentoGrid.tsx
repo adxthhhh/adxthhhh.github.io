@@ -89,11 +89,34 @@ const BentoGrid = () => {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <motion.div
-          className="mb-14 text-center"
+          className="mb-14 text-center relative"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          {/* Sticky Note */}
+          <Link to="/articles" className="absolute top-0 right-0 md:-right-8 lg:-right-24 xl:-right-32 hidden md:block z-10 transition-transform">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 6 }}
+              initial={{ rotate: 3 }}
+              className="w-32 h-32 md:w-36 md:h-36 bg-[#fefce8] shadow-md flex flex-col pt-6 px-4 rounded-br-3xl cursor-pointer border border-[#fef08a]"
+              style={{
+                backgroundImage: 'linear-gradient(transparent 90%, #fef08a 90%)',
+                backgroundSize: '100% 1.5rem',
+                boxShadow: '2px 4px 10px rgba(0,0,0,0.05)'
+              }}
+            >
+              {/* Tape */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-white/60 shadow-sm backdrop-blur-sm -rotate-2" />
+              <h3 className="font-display font-bold text-xl text-yellow-800/90 mt-1 text-center" style={{ fontFamily: 'var(--font-display)' }}>
+                Articles
+              </h3>
+              <p className="text-xs text-yellow-700/70 text-center mt-1 font-medium leading-relaxed">
+                Read my <br/>latest thoughts
+              </p>
+            </motion.div>
+          </Link>
+
           <div className="mx-auto mb-4 h-20 w-20 rounded-full overflow-hidden bg-secondary">
             <img src={profileImg} alt="Adith A J" className="h-full w-full object-cover" />
           </div>
@@ -107,19 +130,19 @@ const BentoGrid = () => {
           {/* Social Icons Inline */}
           <div className="mt-8 flex items-center justify-center gap-5">
             <a href="https://github.com/adxthhhh" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-githubc text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="GitHub">
-              <Github className="h-[22px] w-[22px]" strokeWidth={2.5} />
+              <Github className="h-[1.375rem] w-[1.375rem]" strokeWidth={2.5} />
             </a>
             <a href="https://www.linkedin.com/in/adith-a-j-b623a0372/" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-linkedin text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="LinkedIn">
-              <Linkedin className="h-[22px] w-[22px] fill-current" />
+              <Linkedin className="h-[1.375rem] w-[1.375rem] fill-current" />
             </a>
             <a href="https://x.com/adxthhhh" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-xtwitter text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Twitter">
-              <Twitter className="h-[22px] w-[22px] fill-current" />
+              <Twitter className="h-[1.375rem] w-[1.375rem] fill-current" />
             </a>
             <a href="https://www.instagram.com/adxthhhh/" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Instagram">
-              <Instagram className="h-[22px] w-[22px]" strokeWidth={2.25} />
+              <Instagram className="h-[1.375rem] w-[1.375rem]" strokeWidth={2.25} />
             </a>
             <a href="https://open.spotify.com/user/31sh7m5titrta4j3nzfdyumdmrs4?si=c0d0d013d2f841b4" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-full bg-spotify text-white shadow-sm transition-transform hover:scale-110 hover:shadow-md" aria-label="Spotify">
-              <SpotifyIcon className="h-[22px] w-[22px] fill-current" />
+              <SpotifyIcon className="h-[1.375rem] w-[1.375rem] fill-current" />
             </a>
           </div>
         </motion.div>
