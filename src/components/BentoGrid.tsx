@@ -94,28 +94,6 @@ const BentoGrid = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {/* Sticky Note */}
-          <Link to="/articles" className="absolute top-0 right-0 md:-right-8 lg:-right-24 xl:-right-32 hidden md:block z-10 transition-transform">
-            <motion.div
-              whileHover={{ scale: 1.05, rotate: 6 }}
-              initial={{ rotate: 3 }}
-              className="w-32 h-32 md:w-36 md:h-36 bg-[#fefce8] shadow-md flex flex-col pt-6 px-4 rounded-br-3xl cursor-pointer border border-[#fef08a]"
-              style={{
-                backgroundImage: 'linear-gradient(transparent 90%, #fef08a 90%)',
-                backgroundSize: '100% 1.5rem',
-                boxShadow: '2px 4px 10px rgba(0,0,0,0.05)'
-              }}
-            >
-              {/* Tape */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-5 bg-white/60 shadow-sm backdrop-blur-sm -rotate-2" />
-              <h3 className="font-display font-bold text-xl text-yellow-800/90 mt-1 text-center" style={{ fontFamily: 'var(--font-display)' }}>
-                Articles
-              </h3>
-              <p className="text-xs text-yellow-700/70 text-center mt-1 font-medium leading-relaxed">
-                Read my <br/>latest thoughts
-              </p>
-            </motion.div>
-          </Link>
 
           <div className="mx-auto mb-4 h-20 w-20 rounded-full overflow-hidden bg-secondary">
             <img src={profileImg} alt="Adith A J" className="h-full w-full object-cover" />
@@ -180,31 +158,7 @@ const BentoGrid = () => {
             />
           </motion.div>
 
-          {/* Books */}
-          <motion.div variants={item} className="col-span-1 sm:col-span-2">
-            <BentoCard
-              title="Bookshelf"
-              description="My favourite reads"
-              icon={<BookOpen className="h-7 w-7" />}
-              to="/books"
-              iconColor="text-foreground"
-              bgColor="bg-secondary"
-              className="h-full"
-            />
-          </motion.div>
-
-          {/* Movies */}
-          <motion.div variants={item} className="col-span-1 sm:col-span-2">
-            <BentoCard
-              title="Watchlist"
-              description="Movies & Shows"
-              icon={<Film className="h-7 w-7" />}
-              to="/movies"
-              iconColor="text-foreground"
-              bgColor="bg-secondary"
-              className="h-full"
-            />
-          </motion.div>
+          {/* Hidden pages are intentionally not linked from the homepage */}
         </motion.div>
 
         <motion.p
