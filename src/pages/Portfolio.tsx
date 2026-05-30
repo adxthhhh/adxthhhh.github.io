@@ -1,6 +1,24 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, Rocket } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const featuredProjects = [
+  {
+    title: "Terminal Music Player",
+    description: "A retro-inspired music player driven by terminal-style controls.",
+    to: "/terminal-music-player",
+  },
+  {
+    title: "Fintrack",
+    description: "A personal finance tracker built to help keep budgets clear and expenses organized.",
+    to: "/fintrack",
+  },
+  {
+    title: "Ternary Computing",
+    description: "An experimental project exploring ternary logic and next-generation computing models.",
+    to: "/ternary-computing",
+  },
+];
 
 const Portfolio = () => {
   return (
@@ -24,25 +42,47 @@ const Portfolio = () => {
       </div>
 
       <main className="flex-1 px-6">
-        <div className="mx-auto max-w-3xl">
-          <motion.div
-            className="flex flex-col items-center justify-center py-24 text-center border-t border-border/10"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+        <div className="mx-auto max-w-3xl pb-24">
+          <section className="space-y-8 border-t border-border/10 pt-12">
+            <div className="space-y-4">
+              <p className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-muted-foreground/70">
+                Featured Projects
+              </p>
+              <h2 className="font-display text-3xl font-bold text-foreground">
+                Current portfolio highlights
+              </h2>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Explore live project entries that connect to dedicated pages for each work.
+              </p>
+            </div>
+
             <motion.div
-              className="mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-secondary"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
+              className="grid gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, staggerChildren: 0.1 }}
             >
-              <Rocket className="h-10 w-10 text-foreground" />
+              {featuredProjects.map((project) => (
+                <Link
+                  key={project.title}
+                  to={project.to}
+                  className="group block rounded-3xl border border-border/60 bg-background/80 p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/60 hover:bg-muted/5"
+                >
+                  <div className="flex items-center justify-between gap-4">
+                    <h3 className="font-display text-2xl font-semibold text-foreground">
+                      {project.title}
+                    </h3>
+                    <span className="text-sm font-medium uppercase tracking-[0.32em] text-muted-foreground/70">
+                      View
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
+                </Link>
+              ))}
             </motion.div>
-            <h2 className="font-display text-2xl font-bold text-foreground">Projects Coming Soon</h2>
-            <p className="mt-4 text-muted-foreground text-base max-w-sm mx-auto leading-relaxed">
-              I'm currently curating my latest works. <br/>Check back soon for the full showcase!
-            </p>
-          </motion.div>
+          </section>
         </div>
       </main>
 
