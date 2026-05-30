@@ -1,4 +1,4 @@
-import { ArrowLeft, GitHub } from "lucide-react";
+import { ArrowLeft, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ProjectPageProps {
@@ -50,7 +50,7 @@ const ProjectPage = ({ title, tagline, repoUrl }: ProjectPageProps) => {
                 rel="noreferrer"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80"
               >
-                <GitHub className="h-4 w-4" />
+                <Github className="h-4 w-4" />
                 View repository
               </a>
             </section>
