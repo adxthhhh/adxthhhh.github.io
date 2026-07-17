@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "generate:posts": "node scripts/generate-posts.mjs",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
@@ -13,6 +14,10 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1",
+    "rehype-raw": "^6.1.1",
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
