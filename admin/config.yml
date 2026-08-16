@@ -1,8 +1,13 @@
+# LOCAL TESTING: To test the admin panel locally without OAuth, uncomment the line below.
+# Once enabled, visit http://localhost:5173/admin/ and create posts (saved to browser storage).
+# IMPORTANT: Remove this line before committing to production!
+# local_backend: true
+
 backend:
   name: github
   repo: adxthhhh/adxthhhh.github.io
   branch: main
-  auth_endpoint: https://YOUR_OAUTH_PROXY/auth
+  auth_endpoint: https://adxthhhh-github-io.vercel.app/
   open_authoring: false
 
 media_folder: "public/uploads"
@@ -10,7 +15,7 @@ public_folder: "/uploads"
 
 publish_mode: simple
 
-site_url: "https://adxthhhh.github.io"
+site_url: "https://adxthhhh-github-io.vercel.app/"
 
 collections:
   - name: "blog"
