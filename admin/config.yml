@@ -7,7 +7,7 @@ backend:
   name: github
   repo: adxthhhh/adxthhhh.github.io
   branch: main
-  auth_endpoint: https://adxthhhh-github-io.vercel.app/
+  auth_endpoint: "https://netlify-cms-github-oauth-provider-plum.vercel.app"
   open_authoring: false
 
 media_folder: "public/uploads"
